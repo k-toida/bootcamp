@@ -15,8 +15,8 @@ prior_knowledge: コマンドラインの基礎的な使い方
 
 ### 0.1. この講義の目的
 
-バージョン管理システムとしてgitを利用し、**変更**を管理することの大切さを学び、
-gitとgithubを使った基本的なソフトウェア開発サイクルを回せるようになることがこの講義の目的です。
+バージョン管理システムとしてGitを利用し、**変更**を管理することの大切さを学び、
+GitとGitHubを使った基本的なソフトウェア開発サイクルを回せるようになることがこの講義の目的です。
 
 ### 0.2. この講義のゴール
 
@@ -95,7 +95,7 @@ VCSにはたくさんの種類がありましたが戦国時代を経て、現�
 
 ### 2.1. たくさんのバージョン管理システム
 
-- [git](https://git-scm.com/)
+- [Git](https://git-scm.com/)
 - [Mercurial](https://www.mercurial-scm.org/)
 - [Apache Subversion](https://subversion.apache.org/)
 - Visual SourceSafe
