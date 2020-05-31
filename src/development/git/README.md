@@ -49,7 +49,7 @@ GitとGitHubを使った基本的なソフトウェア開発サイクルを回�
 先にテキストエディタをインストールしておきましょう。
 メモ帳ではデフォルトの文字コードがUTF-8になっていないことがあります。
 この講義では[VS Code](https://azure.microsoft.com/ja-jp/products/visual-studio-code/)を推奨します。
-[Atom](https://atom.io/)や[Sublime Text](https://www.sublimetext.com/3)、[Nodepad++](https://notepad-plus-plus.org/)を使っても構いません。Vimに慣れている人はVimを使ってもよいです。
+[Atom](https://atom.io/)や[Sublime Text](https://www.sublimetext.com/3)、[Nodepad++](https://notepad-plus-plus.org/)を使ってもかまいません。Vimに慣れている人はVimを使ってもよいです。
 
 [Downloading Git](https://git-scm.com/download/win)から「64-bit Git for Windows Setup」を選んでインストールしてください。
 
