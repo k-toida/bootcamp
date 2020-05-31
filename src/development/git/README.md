@@ -9,6 +9,8 @@ prior_knowledge: コマンドラインの基礎的な使い方
 
 # Gitの使い方
 
+[[toc]]
+
 ## 0. まえがきと事前準備
 
 ### 0.1. この講義の目的
@@ -16,17 +18,24 @@ prior_knowledge: コマンドラインの基礎的な使い方
 バージョン管理システムとしてgitを利用し、**変更**を管理することの大切さを学び、
 gitとgithubを使った基本的なソフトウェア開発サイクルを回せるようになることがこの講義の目的です。
 
-### 0.2. 対象の読者
+### 0.2. この講義のゴール
+
+手元のPCでGitとGitHubが利用できる状態になっていて、[GitHub Flow](https://gist.github.com/Gab-km/3705015)を利用した開発ができるようになる。
+
+### 0.3. 想定する受講者
 
 これからプログラムを書く、またはテキストファイルによる設定ファイル、マニュアル、仕様書などを記述する可能性のある技術者を対象としています。
+主に新卒の技術職採用者を想定しています。中級者向けの応用的な内容は扱いません。
 
 講義にあたって事前に以下の要件を満たすようにしてください。
 
-- 以下のコマンドを使えること
-  - ls, cd, mkdir
-- vi(m), emacs, nanoのいずれかでテキスト編集ができること
+- ITパスポート試験レベルの技術を理解している。
+- 基礎的なコマンドラインの操作ができる。
+  - ls, cd, mkdirを使ってディレクトリの移動、ファイルの操作が行える。
 
-### 0.3. この講義で取り扱わないこと
+自分がこの講義を受講したらよいかわからない。受講できるレベルにあるかわからない場合は担当のメンターに相談してください。
+
+### 0.4. この講義で取り扱わないこと
 
 - RCS（Revision Control System）、Subversionなどのバージョン管理システム
 
@@ -40,7 +49,7 @@ gitとgithubを使った基本的なソフトウェア開発サイクルを回�
 先にテキストエディタをインストールしておきましょう。
 メモ帳ではデフォルトの文字コードがUTF-8になっていないことがあります。
 この講義では[VS Code](https://azure.microsoft.com/ja-jp/products/visual-studio-code/)を推奨します。
-[Atom](https://atom.io/)や[Sublime Text](https://www.sublimetext.com/3)、[Nodepad++](https://notepad-plus-plus.org/)を使っても構いません。
+[Atom](https://atom.io/)や[Sublime Text](https://www.sublimetext.com/3)、[Nodepad++](https://notepad-plus-plus.org/)を使っても構いません。Vimに慣れている人はVimを使ってもよいです。
 
 [Downloading Git](https://git-scm.com/download/win)から「64-bit Git for Windows Setup」を選んでインストールしてください。
 
