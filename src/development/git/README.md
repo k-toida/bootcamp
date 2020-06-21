@@ -1,7 +1,7 @@
 ---
-footer: CC BY-SA Licensed | Copyright (c) 2019, Internet Initiative Japan Inc.
+footer: CC BY-SA Licensed | Copyright (c) 2020, Internet Initiative Japan Inc.
 description: バージョン管理システムとしてgitを利用し、変更を管理することの大切さを学びます。
-time: 2時間
+time: 1.5時間
 prior_knowledge: コマンドラインの基礎的な使い方
 ---
 
@@ -9,9 +9,7 @@ prior_knowledge: コマンドラインの基礎的な使い方
 
 # Gitの使い方
 
-[[toc]]
-
-## 0. まえがきと事前準備
+## 0. まえがきと下準備
 
 ### 0.1. この講義の目的
 
@@ -39,6 +37,10 @@ GitとGitHubを使った基本的なソフトウェア開発サイクルを回�
 ### 0.4. この講義で取り扱わないこと
 
 - RCS（Revision Control System）、Subversionなどのバージョン管理システム
+
+### 0.5. この資料のお約束
+
+- :computer: は自分で操作する箇所を示しています。
 
 ## 1. Gitをインストール
 
@@ -79,7 +81,7 @@ brew install git
 
 #### インストールの確認
 
-インストールされているか確認しましょう。
+:computer: インストールされているか確認しましょう。
 
 ```bash
 $ git --version
@@ -118,12 +120,14 @@ VCSにはたくさんの種類がありましたが戦国時代を経て、現�
 自分の名前とメールアドレスします。
 `--global`オプションをつけているので、あらゆるリポジトリでこの設定が有効になります。
 
+:computer: 自分のアカウント情報を設定する。
+
 ```
   $ git config --global user.name 'Kazuki Hamasaki'
   $ git config --global user.email 'kazuki-h@iij.ad.jp'
 ```
 
-登録した情報を確認してみましょう。
+:computer: 登録した情報を確認する。
 
 ```
 $ git config -l
@@ -140,14 +144,14 @@ EclipseのProjectや、Visual StudioのSolutionの単位と同じと考えても
 なにはともあれ、リポジトリがないと始まりません。
 以下の手順でリポジトリを作成してください。
 
-- 好きな場所にディレクトリを作成し、移動する
+:computer: 好きな場所にディレクトリを作成し、移動する。
 
 ```
 $ mkdir git_handson
 $ cd git_handson
 ```
 
-- このディレクトリをGitリポジトリとして初期化する
+:computer: このディレクトリをGitリポジトリとして初期化する。
 
 ```
 $ git init
@@ -180,7 +184,7 @@ Gitで変更を管理することを`追跡(track)`と呼びます。
 
 ファイルを作成して、さっそくコミットしましょう。
 
-- 以下の内容のファイルを作成する。（お好きなエディタでどうぞ！）
+:computer: 以下の内容のファイルを作成する。（お好きなエディタでどうぞ！）
 
 ::: warning
 テキストファイルの文字コードはUTF-8で作成しましょう。このあとの操作で文字化けすることがあります。
@@ -200,7 +204,7 @@ $ vim hello.txt
 
 Gitがファイルをどのように扱っているか確認してみましょう。
 
-- ファイルの状態を確認する
+:computer: ファイルの状態を確認する
 
 ```
 $ git status
@@ -222,19 +226,19 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 `hello.txt`への変更を記録するためにはまずステージングエリアに登録する必要があります。
 
-- コミットしたいファイルをステージングエリアへ登録する
+:computer: コミットしたいファイルをステージングエリアへ登録する。
 
 ```
 $ git add hello.txt
 ```
 
-- ファイルが`Staged`として登録されていることを確認する
+:computer: ファイルが`Staged`として登録されていることを確認する。
 
 ```
 $ git status
 ```
 
-- ステージングエリアのファイルをコミットする
+:computer: ステージングエリアのファイルをコミットする。
 
 ```
 $ git commit
@@ -291,7 +295,7 @@ git config --global core.editor "atom --wait"
 
 ### 5.2. コミットの確認
 
-- 歴史が刻まれていることを確認します。
+:computer: 歴史が刻まれていることを確認します。
 
 ```
 $ git log
@@ -310,7 +314,7 @@ Date:   Wed Jun 26 22:08:30 2019 +0900
 
 しかしどんな変更を入れたか表示されていませんね。
 
-- 前回のコミットの内容を表示してみる
+:computer: 前回のコミットの内容を表示してみる
 
 ```
 $ git show
@@ -325,7 +329,7 @@ $ git show
 
 ### 5.3. さらにコミットを積み重ねる
 
-- typo を直しましょう
+:computer: typo を直しましょう
 
 ```
 $ vim hello.txt
@@ -337,7 +341,7 @@ $ vim hello.txt
 こんばんは ぎっと
 ```
 
-- コミットする前に、前コミットとの変更差分をみてみます。
+:computer: コミットする前に、前コミットとの変更差分をみてみます。
 
 ```
 $ git diff
@@ -345,7 +349,7 @@ $ git diff
 
 タイポだけを直せていますか？
 
-- 問題なければコミットします
+:computer: 問題なければコミットします
 
 ```
 $ git add hello.txt
@@ -353,7 +357,7 @@ $ git status
 $ git commit
 ```
 
-- コミットの確認
+:computer: コミットの確認
 
 ```
 $ git log
@@ -362,7 +366,7 @@ $ git show
 
 コミットの履歴と差分をまとめて見るには`git log`の`-p`オプションが利用できます。
 
-- コミットの履歴と差分をまとめて確認する
+:computer: コミットの履歴と差分をまとめて確認する
 
 ```
 git log -p
@@ -370,27 +374,31 @@ git log -p
 
 ![Gitで2回目のコミット](./images/git_second_commit.drawio.svg)
 
+::: tip コミットとコミットとの間の矢印は逆じゃないの？
+Gitのコミットオブジェクトは直前のコミットへのポインタを持っています。
+詳しく知りたい人は [Gitの内側 - Gitオブジェクト コミットオブジェクト](https://git-scm.com/book/ja/v2/Git%E3%81%AE%E5%86%85%E5%81%B4-Git%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88#r_git_commit_objects)をご覧ください。
+:::
 
 ## 6. ブランチ
 
 ### 6.1. 実はあなたは今、"master"というブランチにいます
 
 `ブランチ(Branch)`とは、履歴の流れを分岐させて記録するしくみです。
-Gitリポジトリを作成すると、自動的に"master"ブランチが1つ作成されています。
+Gitリポジトリを作成すると、自動的に`master`ブランチが1つ作成されています。
 
-- 現在のブランチを確認してみましょう
+:computer: 現在のブランチを確認してみましょう
 
 ```
 $ git branch
 ```
 
-"*" は現在のブランチを指しています
+"*" は現在のブランチを指しています。
 
 ブランチの切り方としては、作業内容単位で切っていくのが一般的です。
 何か作業をするときはとりあえずブランチを切ってそこで作業を行い、
-完了しだい"master"ブランチに反映させます。
+完了しだい`master`ブランチに反映させます。
 
-"master"ブランチをそのままメインブランチとして扱うことが多いです。
+`master`ブランチをそのままメインブランチとして扱うことが多いです。
 今回もその慣習に従います。
 
 ### 6.2. 新たな Branch を作る
@@ -398,13 +406,13 @@ $ git branch
 今度は "ぎっと" を "Git" に直したい。
 せっかくですので別のブランチで作業してみましょう。
 
-- "fix"というブランチを作成してみます。
+:computer: `fix`というブランチを作成する。
 
 ```
 $ git branch fix
 ```
 
-- ブランチを確認する
+:computer: ブランチを確認する。
 
 ```
 $ git branch
@@ -412,18 +420,18 @@ $ git branch
 
 ![fixブランチを作成した](./images/git_branch.drawio.svg)
 
-"fix"ブランチを作成したものの、
-あなたはまだ "master"ブランチにいるままです。
+`fix`ブランチを作成したものの、
+あなたはまだ`master`ブランチにいるままです。
 
 ### 6.3. ブランチを移動する
 
--  "fix" Branch へ移動するために Checkout する
+:computer: "fix" Branch へ移動するために Checkout する。
 
 ```
 $ git checkout fix
 ```
 
-- 現在のブランチを確認する
+:computer: 現在のブランチを確認する
 
 ```
 $ git branch
@@ -431,17 +439,19 @@ $ git branch
 
 " * " が "fix" を指すようになりましたね?
 
-- コミットを確認してみる
+![fixブランチを作成した](./images/git_checkout_branch.drawio.svg)
+
+:computer: コミットを確認してみる
 
 ```
 $ git log
 ```
 
-ブランチを作成した時点での"master"ブランチのコミットが引き継がれているはずです。
+ブランチを作成した時点での`master`ブランチのコミットが引き継がれているはずです。
 
 ### 6.4. "fix"ブランチで Commit する
 
-- ファイルを書き換える
+:computer: ファイルを書き換える
 
 ```
 $ vim hello.txt
@@ -453,7 +463,7 @@ $ vim hello.txt
 こんばんは Git
 ```
 
-- Commit する
+:computer: Commit する。
 
 ```
 $ git add hello.txt
@@ -461,43 +471,64 @@ $ git status
 $ git commit
 ```
 
-- 確認する
+![fixブランチでコミットした](./images/git_fix_branch_commit.drawio.svg)
+
+:computer: 今いるfixブランチのファイルを確認する。
 
 ```
 $ git log
 $ git show
 ```
 
-これにより "fix"ブランチで Commit を積むことができました。
-"master"ブランチに戻るとどう見えるでしょう。
+これにより `fix`ブランチで Commit を積むことができました。
+`master`ブランチに戻るとどう見えるでしょう。
 
 ### 6.5. "master"ブランチへ戻る
 
-- "master" へ移動するために Checkout します
+:computer: `master` へ移動するために Checkout します。
 
 ```
 $ git checkout master
 ```
 
-- "master"ブランチの履歴を見る
+![masterブランチに戻った](./images/git_return_master_branch.drawio.svg)
+
+:computer: "master"ブランチの履歴を見る。
 
 ```
 $ git log
 $ git show
 ```
 
-先ほどの Commit は"fix"ブランチで行ったものですので、当然見えません。
+先ほどの「6.4. "fix"ブランチで Commit する」で行ったコミットは"fix"ブランチで行ったものですので、masterブランチでは見えません。
+
+:computer: この状態でコミットする
+
+```diff
+おはよう ぎっと
+こんにちは ぎっと
+こんばんは ぎっと
++おやすみ ぎっと
+```
+
+![masterブランチに戻った](./images/git_return_master_branch_commit.drawio.svg)
+
+:computer: `master`と`fix`の2つのブランチを言ったり来たりして、ファイルの状態が変わることを確認しましょう。
 
 ### 6.6. Merge する
 
-"master"ブランチに "fix"ブランチの変更を取り込みます。
-- "fix"ブランチの変更内容を、メインである"master"ブランチへ取り込みましょう
+修正が完了して問題がないことを完了したのでこの修正を`master`ブランチに取り込みます。
+`master`ブランチに "fix"ブランチの変更を取り込みます。
+
+
+:computer: "fix"ブランチの変更内容を、メインである"master"ブランチへ取り込みましょう
 
 ```
+$ git checkout master
 $ git merge fix
 ```
 
-- 確認してみましょう
+:computer: 確認してみましょう
 
 ```
 $ git log
@@ -506,8 +537,10 @@ $ git show
 
 "fix"ブランチで行ったコミットが取り込まれていれば問題ありません。
 
-Git の基本操作をひと通り流してやってみました。
+Git の基本操作を一通り流してやってみました。
 Git ハンズオンは以上で終了です。
+
+次は [GitHub ハンズオン](../github) に進んでください。
 
 ## 7. 参考文献
 

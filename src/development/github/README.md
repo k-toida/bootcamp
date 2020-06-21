@@ -1,3 +1,12 @@
+---
+footer: CC BY-SA Licensed | Copyright (c) 2020, Internet Initiative Japan Inc.
+description: バージョン管理システムとしてgitを利用し、変更を管理することの大切さを学びます。
+time: 1.5時間
+prior_knowledge: コマンドラインの基礎的な使い方、Gitの使い方
+---
+
+<header-table/>
+
 # GitHub 入門
 
 [GitHub](https://github.com/)とはGitのリモートリポジトリをホスティングしてくれるサービスです。
@@ -127,7 +136,7 @@ $ ls -al
 `git remote`コマンドでリモートリポジトリの設定を変更できます。
 どのようにリモートリポジトリが登録されているか確認してみましょう。
 
-- リモートリポジトリの情報を確認する
+:computer: リモートリポジトリの情報を確認する
 
 ```bash
 $ git remote -v
@@ -149,7 +158,7 @@ origin	git@github.com:kazuki-h/first_repo.git (push)
 
 リモートリポジトリに対して手元の変更を送ることを`push`と呼びます。
 
-README.md に好きな文言を加えてコミットし、pushしてみましょう。
+:computer: README.md に好きな文言を加えてコミットし、pushしてみましょう。
 
 ```bash
 $ git add README.md
@@ -194,7 +203,7 @@ Blameボタンを押してください。
 
 ブランチを作った場合にGitHubでどう見えるか、見てみましょう。
 
-- ローカルリポジトリでブランチを切ります
+:computer: ローカルリポジトリでブランチを切ります
 
 ```
 $ git checkout -b fix
@@ -202,7 +211,7 @@ $ git checkout -b fix
 
 `REAMDE.md`に何か1行足してください。
 
-- ブランチをリモートリポジトリに反映させます
+:computer: ブランチをリモートリポジトリに反映させます
 
 ```
 $ git push origin fix
@@ -229,7 +238,7 @@ Gitlabでは「Merge Request」と呼びます。
 さきほどから新しい表示が増えていることに気付いていると思いますが、
 「Compare & pull request」ボタンからPull Requestを作成できます。
 
-- Pull Requestを作成してください
+:computer: Pull Requestを作成してください
 
 ![Pull Requestを作成する](./images/github_compare_create_pull_request.png)
 
@@ -243,9 +252,9 @@ Pull Requestを作成する画面になったらどういった変更を入れ�
 
 これでfixブランチに入れた修正がmasterブランチに反映されたはずです。
 
-- GitHub上でmasterブランチの内容を表示して修正が反映されたことを確認しましょう
+:computer: GitHub上でmasterブランチの内容を表示して修正が反映されたことを確認しましょう
 
-- 手元のローカルリポジトリのmasterブランチをpullして最新の状態にし、手元でも修正が反映されたことを確認しましょう。
+:computer: 手元のローカルリポジトリのmasterブランチをpullして最新の状態にし、手元でも修正が反映されたことを確認しましょう。
 
 ```bash
 $ git checkout master
@@ -313,10 +322,10 @@ ITSは取り組まなければいけない、機能追加や不具合の改修�
 バグは湯水のように湧いてきます。
 バグは発見したら記録しておかないとどれを直したのか分からなくなってしまいます。見付け足ら報告しましょう。
 
-- まずは既存プロジェクトにどんなIssueがあるのか確認してみましょう。
+:computer: まずは既存プロジェクトにどんなIssueがあるのか確認してみましょう。
     - https://github.com/iij/mruby/issues
 
-- 自分でIssueを作成してみましょう
+:computer: 自分でIssueを作成してみましょう
     - https://github.com/iij/mruby/issues
 
 #### 6.2. よい不具合報告とは？
@@ -344,7 +353,7 @@ Issueにはラベルを複数付けることができます。
 付けたラベルで絞り込んで表示できます。
 デフォルトで用意されているラベルのほかに自分で定義することもできます。
 
-- さきほど作ったIssueにラベルを付けましょう
+:computer: さきほど作ったIssueにラベルを付けましょう
 
 ### 6.4. 担当者を割り当てる
 
@@ -405,4 +414,6 @@ confluenceにgistのURLを貼ると内容が自由に展開されるマクロが
 ![gistをcfに貼り付けた様子](./images/gist.png)
 
 ## 9. 参考資料
+
+- [GitHub.com ヘルプドキュメント](https://help.github.com/ja/github)
 - [GitHub Learning Lab](https://lab.github.com/)
